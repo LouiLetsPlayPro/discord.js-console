@@ -1,0 +1,9 @@
+{
+  "name": "discord.js-console",
+  "version": "1.0.0",
+  "description": "Eine Consolenerweiterung welche mit discord.js interagiert",
+  "main": "index.js",
+  "keywords": ["discord.js","console","color"],
+  "author": "louiletsplaypro",
+  "license": "MIT"
+}
