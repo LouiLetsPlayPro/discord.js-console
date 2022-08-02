@@ -51,6 +51,14 @@ function logOperation(message, logchannel, client, status, type) {
         client.channels.cache.get(logchannel).send({ content: content });
     } catch (e) { return }
 };
+function logTable(message, logchannel, client) {
+    try {
+        if (client == undefined) return;
+        if (logchannel == undefined) return;
+        var content = "```md\n" + message + "```";
+        client.channels.cache.get(logchannel).send({ content: content });
+    } catch (e) { return }
+};
 
 module.exports.console = class {
 
