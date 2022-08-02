@@ -19,3 +19,5 @@ Nun kann nachdem das Package in deiner datei Importiert ist jederzeit verwendet 
 |console.logWarning|Nachricht|Logge eine Warnung|console.logWarning("Moin")|
 |console.logOperation|Type, Status, Nachricht|Logge eine Operation|console.logOperation("Login","COMLPLEATE","erfolgreich")|
 |console.logStatus|Status, Nachricht|Logge einen Status|console.logStatus("Online", "System erfolgreich gestartet")|
+|console.clear|-|Leere die Console|console.logClear()|
+|console.table|Array, properties, showindex|Stelle daten in der Console in einer Tabelle dar|console.logTable([{ a: 1, b: 'Y' }, { a: 'Z', b: 2 }], [], false)|
