@@ -1,9 +1,20 @@
 {
   "name": "discord.js-console",
-  "version": "1.0.0",
+  "version": "2.1.0-constructor",
   "description": "Eine Consolenerweiterung welche mit discord.js interagiert",
   "main": "index.js",
-  "keywords": ["discord.js","console","color"],
+  "keywords": [
+    "discord.js",
+    "console",
+    "color"
+  ],
   "author": "louiletsplaypro",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:LouiLetsPlayPro/discord.js-console.git"
+  },
+  "bugs": {
+    "url": "https://github.com/LouiLetsPlayPro/discord.js-console/issues"
+  }
 }

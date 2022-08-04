@@ -83,7 +83,7 @@ module.exports.console = class {
      * 
      * @since v1.0.0
      */
-    constructor(
+    static consolebuilder(
         channellog = false,
         logchannel = 0,
         time = true,
@@ -113,9 +113,9 @@ module.exports.console = class {
      * 
      * @since v1.0.0
     */
-    log(message) {
-        if(this.channellog == undefined || this.logchannel == undefined || this.time == undefined || this.color == undefined || this.client == undefined){
-            throw new Error("Keine Daten können geladen werden!")
+    static log(message) {
+        if(!this.channellog || !this.logchannel || !this.time || !this.color || !this.client){
+            throw new Error("")
         }
         if (this.channellog == true) {
             log(message, this.logchannel, this.client)
@@ -142,10 +142,7 @@ module.exports.console = class {
      * 
      * @since v1.0.0
      */
-    logError(code, message) {
-        if(this.channellog == undefined || this.logchannel == undefined || this.time == undefined || this.color == undefined || this.client == undefined){
-            throw new Error("Keine Daten können geladen werden!")
-        }
+    static logError(code, message) {
         if (this.channellog == true) {
             logError(message, this.logchannel, this.client, code)
         }
@@ -170,10 +167,7 @@ module.exports.console = class {
      * 
      * @since v1.0.0
     */
-    logWarning(message) {
-        if(this.channellog == undefined || this.logchannel == undefined || this.time == undefined || this.color == undefined || this.client == undefined){
-            throw new Error("Keine Daten können geladen werden!")
-        }
+    static logWarning(message) {
         if (this.channellog == true) {
             logWarning(message, this.logchannel, this.client)
         }
@@ -200,10 +194,7 @@ module.exports.console = class {
      * 
      * @since v1.0.0
      */
-    logOperation(type, status, message) {
-        if(this.channellog == undefined || this.logchannel == undefined || this.time == undefined || this.color == undefined || this.client == undefined){
-            throw new Error("Keine Daten können geladen werden!")
-        }
+    static logOperation(type, status, message) {
         if (this.channellog == true) {
             logOperation(message, this.logchannel, this.client, status, type)
         }
@@ -229,10 +220,7 @@ module.exports.console = class {
      * 
      * @since v1.0.0
      */
-    logStatus(status, message) {
-        if(this.channellog == undefined || this.logchannel == undefined || this.time == undefined || this.color == undefined || this.client == undefined){
-            throw new Error("Keine Daten können geladen werden!")
-        }
+    static logStatus(status, message) {
         if (this.channellog == true) {
             logStatus(message, this.logchannel, this.client, status)
         }
@@ -257,10 +245,7 @@ module.exports.console = class {
      * 
      * @since v2.0.0
      */
-    logClear() {
-        if(this.channellog == undefined || this.logchannel == undefined || this.time == undefined || this.color == undefined || this.client == undefined){
-            throw new Error("Keine Daten können geladen werden!")
-        }
+    static logClear() {
         if (this.channellog == true) {
             log("console cleared", this.logchannel, this.client)
         }
@@ -279,10 +264,7 @@ module.exports.console = class {
      * 
      * @since v2.0.0
      */
-    logTable(input, properties, index) {
-        if(this.channellog == undefined || this.logchannel == undefined || this.time == undefined || this.color == undefined || this.client == undefined){
-            throw new Error("Keine Daten können geladen werden!")
-        }
+    static logTable(input, properties, index) {
         if(!properties || !properties[0]){
             properties = []
             for (let i = 0; i < input.length; i++) {
@@ -381,10 +363,7 @@ module.exports.console = class {
      * @since v2.1.0
      */
 
-    logInfo(message){
-        if(this.channellog == undefined || this.logchannel == undefined || this.time == undefined || this.color == undefined || this.client == undefined){
-            throw new Error("Keine Daten können geladen werden!")
-        }
+    static logInfo(message){
         if (this.channellog == true) {
             logInfo(message, this.logchannel, this.client)
         }
@@ -401,7 +380,4 @@ module.exports.console = class {
             console.log(" INFO " + message);
         }
     }
-}
-
-const consoletest = new this.console(false,0,true,true,0)
-consoletest.log("Test")
+};
